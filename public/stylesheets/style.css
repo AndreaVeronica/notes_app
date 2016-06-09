@@ -1,8 +1,30 @@
 body {
-  padding: 50px;
+  padding: 20px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+
+.post-it{
+  height: 200px;
+  width: 200px;
+  background-color: #ffcc66;
+  margin: 10px;
+}
+
+.wrap-note{
+  display: inline-flex;
+
+}
+
+.container{
+  margin: 0 auto;
+  width: 80vw;
+}
+
+#post-note-section{
+
 }

@@ -4,7 +4,7 @@ angular.module('notesApp')
 .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
   $urlRouterProvider.otherwise("/home");
-  $locationProvider.html5Mode(true);
+  //$locationProvider.html5Mode(true);
 
   $stateProvider
     .state('home', {
@@ -38,12 +38,23 @@ angular.module('notesApp')
 
 
 angular.module('notesApp')
-.controller('mainCtrl', function($http, $stateParams) {
+.controller('mainCtrl', function($http, $stateParams, $state) {
 
   var ctrl = this;
   ctrl.email;
   ctrl.password;
+  ctrl.user;
 
+  function getCurrentUser(){
+    console.log('test');
+      $http.get('/currentUser')
+        .then(function(response){
+           console.log(response.data);
+           ctrl.user = response.data;
+        });
+  }
+
+  getCurrentUser();
 
   //login function
 
@@ -53,8 +64,14 @@ angular.module('notesApp')
           $http.post('/login', {email: ctrl.email, password: ctrl.password})
           .then(function(response){
             console.log(response);
-          });
-      }
+            if (response.data){
+               ctrl.user = response.data;
+               console.log(ctrl.user);
+               $state.go('notes');
+            }
+
+        });
+     }
 
   //signin function
 
@@ -64,6 +81,10 @@ angular.module('notesApp')
           $http.post('/signup', {email: ctrl.email, password: ctrl.password})
           .then(function(response){
             console.log(response);
+            //save user and change state to user profile.
+            if (response.data){
+               $state.go('notes');
+            }
           });
       }
 
@@ -103,3 +124,17 @@ angular.module('notesApp')
   });
 });
 
+
+
+
+
+//on + button click add new div.
+
+//resize div based on size of text.
+
+//add CRUD
+
+//user can create note
+//user can read note
+//user can delete note
+//user can update note

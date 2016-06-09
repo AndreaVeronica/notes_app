@@ -1,0 +1,15 @@
+<div >
+
+  <form class='login-form' method="post" action="/login" ng-submit='$event.preventDefault()'>
+    <div>
+      <label for="email">Email:</label>
+      <input type="text" name="email" id="email" ng-model='mctrl.email'>
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password" ng-model='mctrl.password'>
+    </div>
+
+    <a ng-click="mctrl.attemptSignup()" >Submit</a>
+  </form>
+</div>

@@ -1,10 +1,53 @@
 <h1>Notes</h1>
 
-<ul>
-  <li ng-repeat="note in ctrl.notes"> {{ note.title }} - {{ note.text }}</li>
-</ul>
-
-
 <div>
-  <h2> </h2>
+  <h2>  </h2>
+
 </div>
+<div class="add-note">
+      <button>+</button>
+</div>
+<div class="create-note">
+    <form id="new-note-form">
+    <input type="text" name="note.title" id="note-title" placeholder="Title" ng-model="note.title">
+    <input type="text" name="note.text" id="note-text" placeholder="Text" ng-model="note.text">
+    <button ng-click="addNote()"> Add Note</button>
+
+
+    </form>
+</div>
+
+<div class="container">
+<ul id="post-note">
+    <div class="wrap-note">
+  <li class="post-it" ng-repeat="note in ctrl.notes">
+    <div>
+    {{ note.text }}
+    <button> Create</button>
+    <button> Edit</button>
+    <button> Update</button>
+    <button> Destroy</button>
+
+    </div>
+
+
+  </li>
+
+    </div>
+</ul>
+</div>
+<div>
+    <ul id="post-note-section">
+
+    </ul>
+</div>
+
+<!-- <div>
+  <h2>  </h2>
+  <form>
+    <input type="text" name="note.title" id="note-title" placeholder="Title">
+    <input type="text" name="note.text" id="note-text" placeholder="Text">
+
+  </form>
+</div>
+ -->
