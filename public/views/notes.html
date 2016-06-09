@@ -1,4 +1,4 @@
-<h1>Notes</h1>
+<h1>Your Notes</h1>
 
 <div>
   <h2>  </h2>
@@ -8,10 +8,10 @@
       <button>+</button>
 </div>
 <div class="create-note">
-    <form id="new-note-form">
-    <input type="text" name="note.title" id="note-title" placeholder="Title" ng-model="note.title">
-    <input type="text" name="note.text" id="note-text" placeholder="Text" ng-model="note.text">
-    <button ng-click="addNote()"> Add Note</button>
+    <form id="new-note-form" ng-submit="ctrl.addNote()">
+    <input type="text" name="note.title" id="note-title" placeholder="Title" ng-model="ctrl.newNote.title">
+    <input type="text" name="note.text" id="note-text" placeholder="Text" ng-model="ctrl.newNote.text">
+    <button> Add Note</button>
 
 
     </form>
@@ -23,9 +23,7 @@
   <li class="post-it" ng-repeat="note in ctrl.notes">
     <div>
     {{ note.text }}
-    <button> Create</button>
     <button> Edit</button>
-    <button> Update</button>
     <button> Destroy</button>
 
     </div>

@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var notes = require('../models/notes');
+var Note = require('../models/note');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {

@@ -45,11 +45,13 @@ angular.module('notesApp')
   ctrl.password;
   ctrl.user;
 
+  var currentU = "";
+
   function getCurrentUser(){
     console.log('test');
       $http.get('/currentUser')
         .then(function(response){
-           console.log(response.data);
+           console.log(response);
            ctrl.user = response.data;
         });
   }
@@ -66,7 +68,8 @@ angular.module('notesApp')
             console.log(response);
             if (response.data){
                ctrl.user = response.data;
-               console.log(ctrl.user);
+               currentU = ctrl.user._id
+               console.log(currentU);
                $state.go('notes');
             }
 
@@ -80,7 +83,7 @@ angular.module('notesApp')
       function attemptSignup(){
           $http.post('/signup', {email: ctrl.email, password: ctrl.password})
           .then(function(response){
-            console.log(response);
+            console.log(response.data.user);
             //save user and change state to user profile.
             if (response.data){
                $state.go('notes');
@@ -100,6 +103,10 @@ angular.module('notesApp')
 
   var ctrl = this;
   ctrl.notes = [];
+  ctrl.newNote = {
+    title: '',
+    text: ''
+  };
 
   ctrl.getNotes = function() {
     $http.get('/api/notes').then(function(response) {
@@ -109,32 +116,32 @@ angular.module('notesApp')
   };
 
   ctrl.getNotes();
+
+  ctrl.addNote = function(){
+    console.log('adding newNote:', ctrl.newNote);
+    $http
+      .post('/api/notes/new', ctrl.newNote)
+      .then(function(response){
+        console.log('new note added.');
+        console.log(response);
+        ctrl.getNotes();
+      }, function(err) {
+        alert('something went wrong!');
+      });
+      ctrl.newNote = {};
+      console.log("add note is working");
+  };
+
+
+ ctrl.deleteNote = function(){
+  $http
+    .delete('/api/notes' + note._id)
+    .then(function(response){
+      var index = ctrl.all.indexOf(note);
+      ctrl.all.splice(index,1);
+    });
+ }
+
+
 });
 
-
-angular.module('notesApp')
-.controller('notesShowCtrl', function($http, $stateParams) {
-  console.log('notesShowCtrl is alive!');
-
-  var ctrl = this;
-  ctrl.note = {};
-
-  $http.get('/api/notes/' + $stateParams.noteId).then(function(response) {
-    ctrl.note = response.data;
-  });
-});
-
-
-
-
-
-//on + button click add new div.
-
-//resize div based on size of text.
-
-//add CRUD
-
-//user can create note
-//user can read note
-//user can delete note
-//user can update note

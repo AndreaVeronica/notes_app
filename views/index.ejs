@@ -2,6 +2,7 @@
 <html>
   <head>
     <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/reset.css' />
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <base href="/">
     <script src="/bower_components/angular/angular.min.js"></script>
@@ -10,25 +11,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
    </head>
-  <body ng-app="notesApp" ng-controller="mainCtrl as mctrl">
+  <body class="page-body" ng-app="notesApp" ng-controller="mainCtrl as mctrl">
+     <div class="nav-bar">
+        <ul class="nav-ul">
+           <li class="nav-li"> <a class="nav-link" ui-sref="home">Home</a></li>
+           <li class="nav-li"> <a class="nav-link" ui-sref="notes" ng-show="mctrl.user">Notes</a> </li>
+           <li class="nav-li"> <a class="nav-link" ui-sref="signup" ng-hide="mctrl.user">Sign Up</a> </li>
+           <li class="nav-li"> <a class="nav-link" ui-sref="login" ng-hide="mctrl.user">Log In</a></li>
+           <li class="nav-li"> <a class="nav-link" ui-sref="logout" ng-show="mctrl.user">Log Out</a></li>
+       </ul>
+    </div>
+    <div class="container-div">
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
 
 
     <!-- <a ui-sref="signup">Sign up</a>
     <a ui-sref="login">Log in</a> -->
 
-    <div style="border: solid 2px; padding: 5px;">
-      <h2>Notes</h2>
-      <a ui-sref="home">Home</a>
-      <a ui-sref="notes" ng-show="mctrl.user">Notes</a>
-      <a ui-sref="signup" ng-hide="mctrl.user">Sign Up</a>
-      <a ui-sref="login" ng-hide="mctrl.user">Log In</a>
-      <a ui-sref="logout" ng-show="mctrl.user">Log Out</a>
-    </div>
 
     <div ui-view=""></div>
 
-
+  </div>
   </body>
 </html>
