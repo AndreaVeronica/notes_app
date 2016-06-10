@@ -146,8 +146,27 @@ a {
   width: 10%;
 }
 
+.h1-notes{
+  color: white;
+  font-size: 24px;
+}
+.top-form{
+  height: 180px;
+}
+
+.bottom-form{
+  /*position: absolute;*/
+  margin: 0 auto;
 
 
+}
+
+button{
+  width: 80px;
+  height: 30px;
+  border-radius: 5px;
+
+}
 
 /* -------  forms   -----------*/
 
@@ -167,3 +186,18 @@ a {
   padding-left: 20px;
 
 }
+#add-note{
+  margin-top: 10px;
+}
+
+/*.update-note-form{
+  margin: auto;
+  width: 10%;
+
+}
+.delete-note-form{
+  margin: auto;
+  width: 10%;
+}*/
+
+/* -----    -----*/

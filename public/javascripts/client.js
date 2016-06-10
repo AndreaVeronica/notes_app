@@ -151,19 +151,30 @@ angular.module('notesApp')
     });
  }
 
+// ctrl.updateNote = function(note){
+//     console.log(note);
+//     $('#new-note-form').populate({title:'text', text:'text'})
+//     $http
+//       .put('/api/notes/' + note._id)
+//       .then(function(response){
+//         // console.log('new note added.');
+//         // console.log(response);
+
+//       }, function(err) {
+//         // alert('something went wrong!');
+//       });
+
+//       console.log("add note is working");
+//   };
+
+
+
+
+
+
+
 
 });
 
 
-// $(document).ready(function(){
-//      $("#add-button").click(function(){
-//         $(".second-top").show();
-//     });
 
-//     $("#add-button").click(function(){
-//         $(".second-top").hide();
-//     });
-
-
-
-// });

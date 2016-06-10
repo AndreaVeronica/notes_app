@@ -1,6 +1,6 @@
 
 <section class="notes-page" ng-show="mctrl.user">
-<h1>Your Notes</h1>
+<!-- <h1 class="h1-notes">Your Notes</h1> -->
   <div class="topsection">
       <!-- <div class="add-note-wrap">
          <button class="add-note-button" id="add-button">+</button>
@@ -12,7 +12,7 @@
               <input type="text" name="note.title" id="note-title" placeholder="Title" ng-model="ctrl.newNote.title">
               <input type="text" name="note.text" id="note-text" placeholder="Text" ng-model="ctrl.newNote.text">
               <br>
-              <button> Add Note</button>
+              <button id="add-note"> Add Note</button>
               </form>
           </div>
       </div>
@@ -24,16 +24,22 @@
         <div class="wrap-note">
             <li class="post-it " ng-repeat="note in ctrl.notes">
               <div>
-                <div class="title">
-                    {{ note.title }}
-                </div>
-                <div class="text">
-                    {{ note.text }}
-                </div>
-                    <form id="delete-note-form" ng-submit="ctrl.deleteNote(note)">
-                    <!-- <button> Edit</button> -->
-                    <button> Destroy</button>
-                    </form>
+                    <div class="top-form">
+                          <div class="title">
+                              {{ note.title }}
+                          </div>
+                          <div class="text">
+                              {{ note.text }}
+                          </div>
+                     </div>
+                  <div class="bottom-form">
+                     <!--  <form id="update-note-form" ng-submit="ctrl.updateNote(note)">
+                          <button class="buttons" id="edit-button"> Edit</button>
+                      </form> -->
+                      <form id="delete-note-form" ng-submit="ctrl.deleteNote(note)">
+                          <button class="buttons" id="destroy-button"> Destroy</button>
+                      </form>
+                  </div>
               </div>
             </li>
 

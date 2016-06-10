@@ -10,12 +10,15 @@ var session = require('express-session');
 var flash = require('connect-flash');
 
 
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var notes = require('./routes/notes');
 
 var app = express();
 mongoose.connect('mongodb://localhost/notes');
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -22,8 +22,8 @@ This app allows users to create notes on post it to their profiles.
 
 
 ### Model Diagram
-![Homepage]()
-![UserProfile]()
+![Homepage](http://i.imgur.com/koxsYqE.png)
+![UserProfile](http://i.imgur.com/stONadK.png)
 
 
 ###  Future Updates
