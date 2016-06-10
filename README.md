@@ -3,7 +3,7 @@
 
 ### App Info
 
-This app allows users to create notes on post it to their profiles.
+This app allows users to create notes on virtual sticky notes and post it to their profiles.
 
 
 
