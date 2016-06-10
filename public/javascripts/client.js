@@ -112,6 +112,7 @@ angular.module('notesApp')
     text: ''
   };
 
+
   ctrl.getNotes = function() {
     $http.get('/api/notes').then(function(response) {
       ctrl.notes = response.data;
@@ -139,12 +140,14 @@ angular.module('notesApp')
 
  ctrl.deleteNote = function(note){
   console.log('delete notes');
+  console.log(note);
+  var deletedNote = note;
   $http
-    .delete('/api/notes/:'+ ctrl.note._id)
-    console.log('/api/notes:'.id)
+    .delete('/api/notes/' + note._id)
+    // console.log(note._id)
     .then(function(response){
-      var index = ctrl.all.indexOf(note);
-      ctrl.all.splice(index,1);
+      var index = ctrl.notes.indexOf(deletedNote);
+      ctrl.notes.splice(index,1);
     });
  }
 
