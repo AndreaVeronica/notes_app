@@ -31,6 +31,10 @@ angular.module('notesApp')
       url: "/signup",
       templateUrl: "views/signup.html"
     });
+    // .state('logout',{
+    //   url: "/logout",
+    //   templateUrl: "views/home.html"
+    // })
 });
 
 
@@ -118,24 +122,26 @@ angular.module('notesApp')
   ctrl.getNotes();
 
   ctrl.addNote = function(){
-    console.log('adding newNote:', ctrl.newNote);
+    // console.log('adding newNote:', ctrl.newNote);
     $http
       .post('/api/notes/new', ctrl.newNote)
       .then(function(response){
-        console.log('new note added.');
-        console.log(response);
+        // console.log('new note added.');
+        // console.log(response);
         ctrl.getNotes();
       }, function(err) {
-        alert('something went wrong!');
+        // alert('something went wrong!');
       });
       ctrl.newNote = {};
       console.log("add note is working");
   };
 
 
- ctrl.deleteNote = function(){
+ ctrl.deleteNote = function(note){
+  console.log('delete notes');
   $http
-    .delete('/api/notes' + note._id)
+    .delete('/api/notes/:'+ ctrl.note._id)
+    console.log('/api/notes:'.id)
     .then(function(response){
       var index = ctrl.all.indexOf(note);
       ctrl.all.splice(index,1);
@@ -145,3 +151,16 @@ angular.module('notesApp')
 
 });
 
+
+// $(document).ready(function(){
+//      $("#add-button").click(function(){
+//         $(".second-top").show();
+//     });
+
+//     $("#add-button").click(function(){
+//         $(".second-top").hide();
+//     });
+
+
+
+// });

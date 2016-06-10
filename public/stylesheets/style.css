@@ -1,13 +1,16 @@
 body {
 
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-image: url("/images/tan-1.jpg");
+  background-image: url("/images/blur-blue-med.jpg");
   background-position: fixed;
+  background: cover;
+  width: 100vw;
 
 }
 
 page-body{
-  margin-left: -15px;
+  max-width: 900px;
+
 }
 .container-div{
   margin-left: 20px;
@@ -18,8 +21,8 @@ a {
 
 }
 .nav-bar{
-  /*background-color: rgba(255, 255, 255, 0.5);*/
-  background-color: #542905;
+  background-color: rgba(255, 255, 255, 0.5);
+
   width: 100%;
   height: 50px;
   margin-bottom: 20px;
@@ -27,34 +30,137 @@ a {
   padding-top: 15px;
 }
 
-
-/*.nav-ul{
-    display: inline-block;
-    float: right;
+.right-nav-li{
+  float: left;
+  margin-left: 20px;
 }
-*/
+.topsection{
+
+  width: 100%;
+  justify-content: center;
+}
+.add-note-wrap{
+  width: 100%;
+
+}
+
+
 .nav-li{
   float: right;
   padding-left: 40px;
 
 }
+
+.home-page{
+  margin: auto;
+  width: 50%;
+  margin-top: 25vh;
+}
+
+.home-container-div{
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  width: 70%;
+  margin: auto;
+}
+
+
+
+
+
+
 .post-it{
-  height: 200px;
-  width: 200px;
+  height: 225px;
+  min-width: 225px;
   background-color: #ffcc66;
   margin: 10px;
+  padding: 10px;
 }
 
 .wrap-note{
   display: inline-flex;
+  margin: auto;
+  width: 900px;
+
+
+}
+.ng-scope{
+  max-width: 100vw;
+}
+
+.second-top{
+  justify-content: center;
+  vertical-align: center;
+  margin: auto;
+  /*display: none;*/
+}
+
+.create-note{
+  height: 200px;
+  width: 30%;
+  margin: auto;
+
+}
+.new-note-form{
+  width: 300px;
 
 }
 
-.container{
-  margin: 0 auto;
-  width: 80vw;
+.add-note{
+  width:400px;
 }
 
-#post-note-section{
+#note-title{
+  width: 300px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+#note-text{
+  width: 300px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+
+.container-notes{
+  margin: auto;
+  max-width: 70vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.add-note-button{
+
+  margin: auto;
+
+}
+
+.add-note-wrap{
+  margin: auto;
+  width: 10%;
+}
+
+
+
+
+/* -------  forms   -----------*/
+
+.log-sign-form{
+  margin: auto;
+  width: 10%;
+  margin-top: 30vh;
+
+}
+
+.log-sign-input{
+  width: 300px;
+  height: 50px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 24px;
+  padding-left: 20px;
 
 }

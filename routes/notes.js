@@ -40,6 +40,7 @@ router.get('/', function(req, res, next) {
 
 });
 
+/* Post New Note */
 router.post('/new', function(req, res, next) {
   var newNote = {
     text: req.body.text,
@@ -54,18 +55,14 @@ router.post('/new', function(req, res, next) {
 });
 
 
-
-// Collection.create(newCol, function(err, collection) {
-//         user.collections.push(collection);
-//         user.save(function(err, saved) {
-//           return res.json({collection: collection, user: saved});
-//         });
-//       });
-//     }else {
-//       console.log(user);
-//       return res.json({result: 'Failed'});
-//     }
-//   });
-
+/* Delete Post */
+router.delete('/:id', function(req, res, next) {
+ Note.findByIdAndRemove(req.params.id)
+ .then(function() {
+   res.json({message: 'Note successfully deleted'});
+ }, function(err) {
+   return next(err);
+ });
+});
 
 module.exports = router;

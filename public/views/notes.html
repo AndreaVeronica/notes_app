@@ -1,44 +1,52 @@
+
+<section class="notes-page" ng-show="mctrl.user">
 <h1>Your Notes</h1>
+  <div class="topsection">
+      <!-- <div class="add-note-wrap">
+         <button class="add-note-button" id="add-button">+</button>
+      </div> -->
+      <br>
+      <div class="second-top">
+          <div class="create-note">
+              <form id="new-note-form" ng-submit="ctrl.addNote()">
+              <input type="text" name="note.title" id="note-title" placeholder="Title" ng-model="ctrl.newNote.title">
+              <input type="text" name="note.text" id="note-text" placeholder="Text" ng-model="ctrl.newNote.text">
+              <br>
+              <button> Add Note</button>
+              </form>
+          </div>
+      </div>
+  </div>
 
-<div>
-  <h2>  </h2>
 
+<div class="container-notes">
+      <ul id="post-note">
+        <div class="wrap-note">
+            <li class="post-it " ng-repeat="note in ctrl.notes">
+              <div>
+                <div class="title">
+                    {{ note.title }}
+                </div>
+                <div class="text">
+                    {{ note.text }}
+                </div>
+                    <form id="delete-note-form" ng-submit="ctrl.deleteNote()">
+                    <!-- <button> Edit</button> -->
+                    <button> Destroy</button>
+                    </form>
+              </div>
+            </li>
+
+          </div>
+      </ul>
 </div>
-<div class="add-note">
-      <button>+</button>
-</div>
-<div class="create-note">
-    <form id="new-note-form" ng-submit="ctrl.addNote()">
-    <input type="text" name="note.title" id="note-title" placeholder="Title" ng-model="ctrl.newNote.title">
-    <input type="text" name="note.text" id="note-text" placeholder="Text" ng-model="ctrl.newNote.text">
-    <button> Add Note</button>
 
-
-    </form>
-</div>
-
-<div class="container">
-<ul id="post-note">
-    <div class="wrap-note">
-  <li class="post-it" ng-repeat="note in ctrl.notes">
-    <div>
-    {{ note.text }}
-    <button> Edit</button>
-    <button> Destroy</button>
-
-    </div>
-
-
-  </li>
-
-    </div>
-</ul>
-</div>
-<div>
+</section>
+<!-- <div class="">
     <ul id="post-note-section">
 
     </ul>
-</div>
+</div> -->
 
 <!-- <div>
   <h2>  </h2>
