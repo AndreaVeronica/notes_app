@@ -5,7 +5,7 @@
 
 This app allows users to create notes on post it to their profiles.
 
-[NotePad] (tranquil-waters-21583.herokuapp.com)
+
 
 
 ### Technologies Used
