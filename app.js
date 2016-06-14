@@ -16,13 +16,25 @@ var users = require('./routes/users');
 var notes = require('./routes/notes');
 
 var app = express();
-mongoose.connect('mongodb://localhost/notes');
 
 
-// Connect To Database
 
-var mongoUri = process.env.MONGODB_URI || 'mongodb://localhost/project4'
-mongoose.connect(mongoUri);
+
+var uristring =
+process.env.MONGOLAB_URI ||
+process.env.MONGOHQ_URL ||
+process.env.MONGODB_URI ||
+'mongodb://localhost/notes';
+
+// Connect to DB
+mongoose.connect(uristring, function(err, res) {
+  if(err) {
+    console.log('ERROR connecting to: '+uristring+'. '+err);
+  }else {
+    console.log('Succeeded in connecting to: '+uristring);
+  }
+});
+
 
 
 // view engine setup
