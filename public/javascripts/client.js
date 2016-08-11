@@ -30,11 +30,11 @@ angular.module('notesApp')
     .state('signup', {
       url: "/signup",
       templateUrl: "views/signup.html"
+    })
+    .state('logout',{
+      url: "/logout",
+      templateUrl: "views/home.html"
     });
-    // .state('logout',{
-    //   url: "/logout",
-    //   templateUrl: "views/home.html"
-    // })
 });
 
 
@@ -63,7 +63,6 @@ angular.module('notesApp')
   getCurrentUser();
 
   //login function
-
   ctrl.attemptLogin = attemptLogin;
 
       function attemptLogin(){
@@ -81,7 +80,6 @@ angular.module('notesApp')
      }
 
   //signin function
-
   ctrl.attemptSignup = attemptSignup;
 
       function attemptSignup(){
@@ -90,12 +88,35 @@ angular.module('notesApp')
             console.log(response.data.user);
             //save user and change state to user profile.
             if (response.data){
+               ctrl.user = response.data.user;
+              // currentU = ctrl.user._id
+               // console.log(currentU);
                $state.go('notes');
+            } else{
+                console.log('failure');
             }
+
           });
       }
 
+    //logout function
+    ctrl.attemptLogout = attemptLogout;
+      function attemptLogout(){
+      ctrl.user = undefined;
+      ctrl.email = undefined;
+      ctrl.password = undefined;
+      $state.go('home');
+
+
+     }
+
+
+
+
 });
+
+
+
 
 
 

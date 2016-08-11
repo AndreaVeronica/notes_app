@@ -1,15 +1,15 @@
 <div >
 
-  <form class='log-sign-form' method="post" action="/login" ng-submit='$event.preventDefault()'>
+  <form class='log-sign-form' method="post" action="/signup" ng-submit='$event.preventDefault()'>
     <div>
       <label for="email">Email:</label>
-      <input type="text" name="email" id="email" placeholder="Email" ng-model='mctrl.email'>
+      <input class="log-sign-input" type="text" name="email" id="email" placeholder="Example@example.com" ng-model='mctrl.email'>
     </div>
     <div>
       <label for="password">Password:</label>
-      <input type="password" name="password" id="password" placeholder="Password" ng-model='mctrl.password'>
+      <input class="log-sign-input" type="password" name="password" id="password" placeholder="Password" ng-model='mctrl.password'>
     </div>
 
-    <a ng-click="mctrl.attemptSignup()" >Submit</a>
+    <button ng-click="mctrl.attemptSignup()"> Submit </button>
   </form>
 </div>

@@ -21,7 +21,7 @@
            <li class="nav-li"> <a class="nav-link" ui-sref="notes" ng-show="mctrl.user">Notes</a> </li>
            <li class="nav-li"> <a class="nav-link" ui-sref="signup" ng-hide="mctrl.user">Sign Up</a> </li>
            <li class="nav-li"> <a class="nav-link" ui-sref="login" ng-hide="mctrl.user">Log In</a></li>
-           <li class="nav-li"> <a class="nav-link" ui-sref="logout" ng-show="mctrl.user">Log Out</a></li>
+           <li class="nav-li"> <a class="nav-link" ui-sref="logout" ng-show="mctrl.user" ng-click="mctrl.attemptLogout()">Log Out</a></li>
        </ul>
     </div>
 

@@ -3,11 +3,11 @@
   <form class='log-sign-form' method="post" action="/login" ng-submit='$event.preventDefault()'>
     <div>
       <label for="email">Email:</label>
-      <input class="log-sign-input" type="text" name="email" id="email" ng-model='mctrl.email'>
+      <input class="log-sign-input" type="text" name="email" id="email" placeholder="Example@example.com" ng-model='mctrl.email'>
     </div>
     <div>
       <label for="password">Password:</label>
-      <input class="log-sign-input" type="password" name="password" id="password" ng-model='mctrl.password'>
+      <input class="log-sign-input" type="password" name="password" id="password" placeholder="Password" ng-model='mctrl.password'>
     </div>
 
     <button ng-click="mctrl.attemptLogin()" >Submit</button>
