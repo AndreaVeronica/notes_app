@@ -4,7 +4,6 @@ var Note = require('../models/note');
 
 
 
-
 function seedNotes() {
   var seedNotes = [
     { title: 'First Note',
@@ -65,4 +64,6 @@ router.delete('/:id', function(req, res, next) {
  });
 });
 
+
+/* Edit Post */
 module.exports = router;
