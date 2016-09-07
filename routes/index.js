@@ -32,11 +32,12 @@ router.route('/signup')
 // Login Page
 router.route('/login')
   .post(passport.authenticate('local-login'), function(req, res) {
-    console.log('passed authenticate');
-    console.log(res);
-    console.log('!!!');
-    console.log(req.user);
+      //res.json(req.user);
+      if (!req.user) {
+      return res.json({result: 'invalid login'});
+       }else {
       res.json(req.user);
+      }
 
   });
 

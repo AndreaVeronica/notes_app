@@ -4,7 +4,8 @@ var Note = require('../models/note');
 
 
 
-function seedNotes() {
+
+/* function seedNotes() {
   var seedNotes = [
     { title: 'First Note',
     text: "This is the text for the first note" },
@@ -26,7 +27,25 @@ function seedNotes() {
   });
 }
 
-seedNotes();
+seedNotes();  */
+
+// Check if user is logged in
+function authenticate(req, res, next) {
+  req.isAuthenticated() ? next() : res.redirect('/');
+}
+
+// Check that user owns the page
+function authorized(id) {
+  return currentUser ? ""+currentUser._id === id : false;
+}
+
+function makeError(res, message, status) {
+  res.statusCode = status;
+  var error = new Error(message);
+  error.status = status;
+  return error;
+}
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
